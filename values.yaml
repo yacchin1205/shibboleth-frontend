@@ -50,6 +50,7 @@ ingress:
     #     - chart-example.local
 
 shibbolethDomain: 'shibboleth.test.jp'
+upstreamURL: 'http://proxy:8081'
 
 certificate:
   enabled: false

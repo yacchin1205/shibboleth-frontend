@@ -180,8 +180,8 @@ httpd/conf.d/shib.conf: |-
       # ShibDisable on
       ShibRequestSetting REMOTE_ADDR X-Forwarded-For
 
-      ProxyPass http://127.0.0.1:{{ .Values.service.externalPort }}/
-      ProxyPassReverse http://127.0.0.1:{{ .Values.service.externalPort }}/
+      ProxyPass {{ .Values.upstreamURL }}/
+      ProxyPassReverse {{ .Values.upstreamURL }}/
     </Location>
 
     <Location /login>
@@ -194,8 +194,8 @@ httpd/conf.d/shib.conf: |-
       ShibUseEnvironment off
       ShibUseHeaders on
 
-      ProxyPass http://127.0.0.1:{{ .Values.service.externalPort }}/login
-      ProxyPassReverse http://127.0.0.1:{{ .Values.service.externalPort }}/login
+      ProxyPass {{ .Values.upstreamURL }}/login
+      ProxyPassReverse {{ .Values.upstreamURL }}/login
     </Location>
 
     <Location /Shibboleth.sso>
