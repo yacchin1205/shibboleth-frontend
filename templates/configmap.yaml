@@ -179,7 +179,6 @@ httpd/conf.d/shib.conf: |-
     <Location />
       # ShibDisable on
       AuthType shibboleth
-      ShibCompatWith24 On
       ShibRequestSetting requireSession true
       Require shib-session
 
