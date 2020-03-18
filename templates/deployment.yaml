@@ -58,10 +58,6 @@ spec:
         - name: secret
           secret:
             secretName: {{ template "shibboleth.fullname" . }}
-        {{- if .Values.tls.enabled }}
-        - name: certs
-          emptyDir: {}
-        {{- end }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
