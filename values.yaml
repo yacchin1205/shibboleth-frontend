@@ -33,6 +33,7 @@ service:
   sessionAffinity: None
   externalPort: 8080
   internalPort: 80
+  annotations:
 
 ingress:
   enabled: false

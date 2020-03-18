@@ -7,6 +7,10 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
+  annotations:
+    {{- range $key, $value := .Values.service.annotations }}
+      {{ $key }}: {{ $value | quote }}
+    {{- end }}
 spec:
   type: {{ .Values.service.type }}
   sessionAffinity: {{ .Values.service.sessionAffinity }}
