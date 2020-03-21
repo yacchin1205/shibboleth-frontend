@@ -14,7 +14,8 @@ apache:
     # requests:
     #   cpu: 100m
     #   memory: 128Mi
-  customLocationApacheConfig: ''
+  customApacheLocationConfig: ''
+  customApacheRewriteConfig: ''
   configEnvs: {}
   configFiles: {}
   secretEnvs: {}
