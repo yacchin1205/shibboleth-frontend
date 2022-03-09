@@ -36,9 +36,9 @@ spec:
               httpHeaders:
                 - name: Host
                   value: health
-              path: /healthz
+              path: /Shibboleth.sso/Status
               port: {{ .Values.service.internalPort }}
-            initialDelaySeconds: 300
+            initialDelaySeconds: 60
           readinessProbe:
             httpGet:
               httpHeaders:
