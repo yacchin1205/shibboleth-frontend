@@ -1,6 +1,6 @@
 {{- if .Values.ingress.enabled -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ template "shibboleth.fullname" . }}
@@ -14,6 +14,7 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
+  ingressClassName: public
   rules:
     {{- $serviceName := include "shibboleth.fullname" . -}}
     {{- $servicePort := .Values.service.externalPort -}}
@@ -24,8 +25,11 @@ spec:
           {{- range $ingressPaths }}
           - path: {{ . }}
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              service:
+                name: {{ $serviceName }}
+                port:
+                  number: {{ $servicePort }}
+            pathType: ImplementationSpecific
           {{- end -}}
     {{- end -}}
   {{- if (or .Values.ingress.tls (and .Values.certificate.enabled .Values.certificate.tls)) }}
