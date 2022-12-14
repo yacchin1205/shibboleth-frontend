@@ -4,8 +4,8 @@
 
 apache:
   image:
-    repository: unicon/shibboleth-sp
-    tag: latest
+    repository: gcr.io/nii-ap-ops/shibboleth/shibboleth-sp
+    tag: master
     pullPolicy: Always
   resources: {}
     # limits:

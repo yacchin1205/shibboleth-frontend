@@ -3,11 +3,11 @@ description: Shibboleth Frontend
 name: shibboleth
 version: 3.0.3
 appVersion: 3.0.3
-home: https://github.com/yacchin1205/shibboleth-frontend
+home: https://github.com/RCOSDP/CS-shibboleth-sp-k8s
 keywords:
   - authentication
 sources:
-  - https://github.com/yacchin1205/shibboleth-frontend
+  - https://github.com/RCOSDP/CS-shibboleth-sp-k8s
 maintainers:
-  - name: Satoshi Yazawa
-    url: https://github.com/yacchin1205/
+  - name: Research Center for Open Science and data platform(RCOS) in National Institute of Informatics, Japan
+    url: https://rcos.nii.ac.jp/
